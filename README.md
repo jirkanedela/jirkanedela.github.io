@@ -1,1 +1,1 @@
-# jirkanedela.github.io
+# Tips for Openguessr
