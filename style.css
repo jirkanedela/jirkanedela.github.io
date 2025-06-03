@@ -4,6 +4,9 @@ body {
   color: #222;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -21,6 +24,7 @@ nav a {
 
 main {
   padding: 2em;
+  flex: 1;
 }
 
 details {
@@ -36,170 +40,6 @@ details {
 details:hover {
   background: #e5e5e5;
 }
-
-details::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.15;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Vlajky pro jednotlivé státy */
-details[data-country="albania"]::before { background-image: url('flags/al.png'); }
-details[data-country="austria"]::before { background-image: url('flags/at.png'); }
-details[data-country="belgium"]::before { background-image: url('flags/be.png'); }
-details[data-country="bulgaria"]::before { background-image: url('flags/bg.png'); }
-details[data-country="croatia"]::before { background-image: url('flags/hr.png'); }
-details[data-country="czech"]::before { background-image: url('flags/cz.png'); }
-details[data-country="denmark"]::before { background-image: url('flags/dk.png'); }
-details[data-country="estonia"]::before { background-image: url('flags/ee.png'); }
-details[data-country="finland"]::before { background-image: url('flags/fi.png'); }
-details[data-country="france"]::before { background-image: url('flags/fr.png'); }
-details[data-country="germany"]::before { background-image: url('flags/de.png'); }
-details[data-country="greece"]::before { background-image: url('flags/gr.png'); }
-details[data-country="hungary"]::before { background-image: url('flags/hu.png'); }
-details[data-country="iceland"]::before { background-image: url('flags/is.png'); }
-details[data-country="ireland"]::before { background-image: url('flags/ie.png'); }
-details[data-country="italy"]::before { background-image: url('flags/it.png'); }
-details[data-country="latvia"]::before { background-image: url('flags/lv.png'); }
-details[data-country="lithuania"]::before { background-image: url('flags/lt.png'); }
-details[data-country="luxembourg"]::before { background-image: url('flags/lu.png'); }
-details[data-country="montenegro"]::before { background-image: url('flags/me.png'); }
-details[data-country="netherlands"]::before { background-image: url('flags/nl.png'); }
-details[data-country="macedonia"]::before { background-image: url('flags/mk.png'); }
-details[data-country="norway"]::before { background-image: url('flags/no.png'); }
-details[data-country="poland"]::before { background-image: url('flags/pl.png'); }
-details[data-country="portugal"]::before { background-image: url('flags/pt.png'); }
-details[data-country="romania"]::before { background-image: url('flags/ro.png'); }
-details[data-country="serbia"]::before { background-image: url('flags/rs.png'); }
-details[data-country="slovakia"]::before { background-image: url('flags/sk.png'); }
-details[data-country="slovenia"]::before { background-image: url('flags/si.png'); }
-details[data-country="spain"]::before { background-image: url('flags/es.png'); }
-details[data-country="sweden"]::before { background-image: url('flags/se.png'); }
-details[data-country="switzerland"]::before { background-image: url('flags/ch.png'); }
-details[data-country="turkey"]::before { background-image: url('flags/tr.png'); }
-details[data-country="ukraine"]::before { background-image: url('flags/ua.png'); }
-details[data-country="uk"]::before { background-image: url('flags/gb.png'); }
-
-/* Vlajky států USA */
-details[data-country="alabama"]::before { background-image: url('flags/us-al.png'); }
-details[data-country="alaska"]::before { background-image: url('flags/us-ak.png'); }
-details[data-country="arizona"]::before { background-image: url('flags/us-az.png'); }
-details[data-country="arkansas"]::before { background-image: url('flags/us-ar.png'); }
-details[data-country="california"]::before { background-image: url('flags/us-ca.png'); }
-details[data-country="colorado"]::before { background-image: url('flags/us-co.png'); }
-details[data-country="connecticut"]::before { background-image: url('flags/us-ct.png'); }
-details[data-country="delaware"]::before { background-image: url('flags/us-de.png'); }
-details[data-country="florida"]::before { background-image: url('flags/us-fl.png'); }
-details[data-country="georgia"]::before { background-image: url('flags/us-ga.png'); }
-details[data-country="hawaii"]::before { background-image: url('flags/us-hi.png'); }
-details[data-country="idaho"]::before { background-image: url('flags/us-id.png'); }
-details[data-country="illinois"]::before { background-image: url('flags/us-il.png'); }
-details[data-country="indiana"]::before { background-image: url('flags/us-in.png'); }
-details[data-country="iowa"]::before { background-image: url('flags/us-ia.png'); }
-details[data-country="kansas"]::before { background-image: url('flags/us-ks.png'); }
-details[data-country="kentucky"]::before { background-image: url('flags/us-ky.png'); }
-details[data-country="louisiana"]::before { background-image: url('flags/us-la.png'); }
-details[data-country="maine"]::before { background-image: url('flags/us-me.png'); }
-details[data-country="maryland"]::before { background-image: url('flags/us-md.png'); }
-details[data-country="massachusetts"]::before { background-image: url('flags/us-ma.png'); }
-details[data-country="michigan"]::before { background-image: url('flags/us-mi.png'); }
-details[data-country="minnesota"]::before { background-image: url('flags/us-mn.png'); }
-details[data-country="mississippi"]::before { background-image: url('flags/us-ms.png'); }
-details[data-country="missouri"]::before { background-image: url('flags/us-mo.png'); }
-details[data-country="montana"]::before { background-image: url('flags/us-mt.png'); }
-details[data-country="nebraska"]::before { background-image: url('flags/us-ne.png'); }
-details[data-country="nevada"]::before { background-image: url('flags/us-nv.png'); }
-details[data-country="new-hampshire"]::before { background-image: url('flags/us-nh.png'); }
-details[data-country="new-jersey"]::before { background-image: url('flags/us-nj.png'); }
-details[data-country="new-mexico"]::before { background-image: url('flags/us-nm.png'); }
-details[data-country="new-york"]::before { background-image: url('flags/us-ny.png'); }
-details[data-country="north-carolina"]::before { background-image: url('flags/us-nc.png'); }
-details[data-country="north-dakota"]::before { background-image: url('flags/us-nd.png'); }
-details[data-country="ohio"]::before { background-image: url('flags/us-oh.png'); }
-details[data-country="oklahoma"]::before { background-image: url('flags/us-ok.png'); }
-details[data-country="oregon"]::before { background-image: url('flags/us-or.png'); }
-details[data-country="pennsylvania"]::before { background-image: url('flags/us-pa.png'); }
-details[data-country="rhode-island"]::before { background-image: url('flags/us-ri.png'); }
-details[data-country="south-carolina"]::before { background-image: url('flags/us-sc.png'); }
-details[data-country="south-dakota"]::before { background-image: url('flags/us-sd.png'); }
-details[data-country="tennessee"]::before { background-image: url('flags/us-tn.png'); }
-details[data-country="texas"]::before { background-image: url('flags/us-tx.png'); }
-details[data-country="utah"]::before { background-image: url('flags/us-ut.png'); }
-details[data-country="vermont"]::before { background-image: url('flags/us-vt.png'); }
-details[data-country="virginia"]::before { background-image: url('flags/us-va.png'); }
-details[data-country="washington"]::before { background-image: url('flags/us-wa.png'); }
-details[data-country="west-virginia"]::before { background-image: url('flags/us-wv.png'); }
-details[data-country="wisconsin"]::before { background-image: url('flags/us-wi.png'); }
-details[data-country="wyoming"]::before { background-image: url('flags/us-wy.png'); }
-
-/* Vlajky pro kanadské provincie a teritoria */
-details[data-country="alberta"]::before { background-image: url('flags/ca-ab.png'); }
-details[data-country="british-columbia"]::before { background-image: url('flags/ca-bc.png'); }
-details[data-country="manitoba"]::before { background-image: url('flags/ca-mb.png'); }
-details[data-country="new-brunswick"]::before { background-image: url('flags/ca-nb.png'); }
-details[data-country="newfoundland-and-labrador"]::before { background-image: url('flags/ca-nl.png'); }
-details[data-country="nova-scotia"]::before { background-image: url('flags/ca-ns.png'); }
-details[data-country="ontario"]::before { background-image: url('flags/ca-on.png'); }
-details[data-country="prince-edward-island"]::before { background-image: url('flags/ca-pe.png'); }
-details[data-country="quebec"]::before { background-image: url('flags/ca-qc.png'); }
-details[data-country="saskatchewan"]::before { background-image: url('flags/ca-sk.png'); }
-details[data-country="northwest-territories"]::before { background-image: url('flags/ca-nt.png'); }
-details[data-country="nunavut"]::before { background-image: url('flags/ca-nu.png'); }
-details[data-country="yukon"]::before { background-image: url('flags/ca-yt.png'); }
-
-/* Vlajky pro mexické státy */
-details[data-country="aguascalientes"]::before { background-image: url('flags/Flag_of_Aguascalientes.png'); }
-details[data-country="baja-california"]::before { background-image: url('flags/Flag_of_Baja_California.png'); }
-details[data-country="baja-california-sur"]::before { background-image: url('flags/Flag_of_Baja_California_Sur.png'); }
-details[data-country="campeche"]::before { background-image: url('flags/Flag_of_Campeche.png'); }
-details[data-country="chiapas"]::before { background-image: url('flags/Flag_of_Chiapas.png'); }
-details[data-country="coahuila"]::before { background-image: url('flags/Flag_of_Coahuila.png'); }
-details[data-country="colima"]::before { background-image: url('flags/Flag_of_Colima.png'); }
-details[data-country="durango"]::before { background-image: url('flags/Flag_of_Durango.png'); }
-details[data-country="guanajuato"]::before { background-image: url('flags/Flag_of_Guanajuato.png'); }
-details[data-country="guerrero"]::before { background-image: url('flags/Flag_of_Guerrero.png'); }
-details[data-country="hidalgo"]::before { background-image: url('flags/Flag_of_Hidalgo.png'); }
-details[data-country="jalisco"]::before { background-image: url('flags/Flag_of_Jalisco.png'); }
-details[data-country="mexico-city"]::before { background-image: url('flags/Flag_of_Mexico_City.png'); }
-details[data-country="mexico-state"]::before { background-image: url('flags/Flag_of_Mexico_State.png'); }
-details[data-country="michoacan"]::before { background-image: url('flags/Flag_of_Michoacán.png'); }
-details[data-country="morelos"]::before { background-image: url('flags/Flag_of_Morelos.png'); }
-details[data-country="nayarit"]::before { background-image: url('flags/Flag_of_Nayarit.png'); }
-details[data-country="nuevo-leon"]::before { background-image: url('flags/Flag_of_Nuevo_León.png'); }
-details[data-country="oaxaca"]::before { background-image: url('flags/Flag_of_Oaxaca.png'); }
-details[data-country="puebla"]::before { background-image: url('flags/Flag_of_Puebla.png'); }
-details[data-country="queretaro"]::before { background-image: url('flags/Flag_of_Querétaro.png'); }
-details[data-country="quintana-roo"]::before { background-image: url('flags/Flag_of_Quintana_Roo.png'); }
-details[data-country="san-luis-potosi"]::before { background-image: url('flags/Flag_of_San_Luis_Potosí.png'); }
-details[data-country="sinaloa"]::before { background-image: url('flags/Flag_of_Sinaloa.png'); }
-details[data-country="sonora"]::before { background-image: url('flags/Flag_of_Sonora.png'); }
-details[data-country="tabasco"]::before { background-image: url('flags/Flag_of_Tabasco.png'); }
-details[data-country="tamaulipas"]::before { background-image: url('flags/Flag_of_Tamaulipas.png'); }
-details[data-country="tlaxcala"]::before { background-image: url('flags/Flag_of_Tlaxcala.png'); }
-details[data-country="veracruz"]::before { background-image: url('flags/Flag_of_Veracruz.png'); }
-details[data-country="yucatan"]::before { background-image: url('flags/Flag_of_Yucatán.png'); }
-details[data-country="zacatecas"]::before { background-image: url('flags/Flag_of_Zacatecas.png'); }
-
-/* Vlajky pro africké státy */
-details[data-country="south-africa"]::before { background-image: url('flags/south-africa_flag.png'); }
-details[data-country="botswana"]::before { background-image: url('flags/botswana_flag.png'); }
-details[data-country="kenya"]::before { background-image: url('flags/kenya_flag.png'); }
-details[data-country="tunisia"]::before { background-image: url('flags/tunisia_flag.png'); }
-details[data-country="rwanda"]::before { background-image: url('flags/rwanda_flag.png'); }
-details[data-country="eswatini"]::before { background-image: url('flags/eswatini_flag.png'); }
-details[data-country="lesotho"]::before { background-image: url('flags/lesotho_flag.png'); }
-details[data-country="ghana"]::before { background-image: url('flags/ghana_flag.png'); }
-details[data-country="senegal"]::before { background-image: url('flags/senegal_flag.png'); }
-details[data-country="nigeria"]::before { background-image: url('flags/nigeria_flag.png'); }
 
 summary {
   font-weight: bold;
@@ -226,9 +66,12 @@ details[open] summary::before {
 }
 
 .flag {
-  font-size: 1.5em;
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 2px;
   margin-right: 0.5em;
-  display: inline-block;
   vertical-align: middle;
 }
 
@@ -237,5 +80,233 @@ footer {
   color: white;
   text-align: center;
   padding: 1em;
-  margin-top: 2em;
+  margin-top: auto;
+}
+
+/* Odstraním staré styly pro pozadí vlajek */
+details::before {
+  display: none;
+}
+
+/* Odstraním všechny staré styly pro vlajky */
+details[data-country]::before {
+  display: none;
+}
+
+/* Styly pro vlajky u názvů států */
+.country-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.country-flag {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+/* Search bar styles */
+.search-container {
+  position: relative;
+  margin: 1em auto;
+  max-width: 600px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 0.8em;
+  border: 2px solid #ffc400;
+  border-radius: 8px;
+  font-size: 1em;
+  background: white;
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 196, 0, 0.3);
+}
+
+/* Search page styles */
+.search-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.search-stats {
+  margin-bottom: 2em;
+}
+
+.search-stats h2 {
+  color: #1a0dab;
+  margin: 0 0 0.5em 0;
+}
+
+.search-stats p {
+  color: #666;
+  margin: 0;
+}
+
+.search-result-group {
+  margin-bottom: 3em;
+}
+
+.search-result-group h3 {
+  color: #1a0dab;
+  margin: 0 0 1em 0;
+  font-size: 1.2em;
+}
+
+.loading {
+  text-align: center;
+  padding: 2em;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 2em;
+  color: #d32f2f;
+}
+
+.no-results {
+  text-align: center;
+  padding: 2em;
+}
+
+.no-results h2 {
+  color: #1a0dab;
+  margin: 0 0 0.5em 0;
+}
+
+.no-results p {
+  color: #666;
+  margin: 0;
+}
+
+/* Search result styles */
+.search-match {
+  padding: 1em;
+  margin: 1em 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-match:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.match-header h4 {
+  margin: 0;
+  color: #1a0dab;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.match-url {
+  color: #006621;
+  font-size: 0.9em;
+}
+
+.match-excerpt {
+  margin: 0.5em 0;
+  color: #545454;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.related-content {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid #e0e0e0;
+}
+
+.related-content h5 {
+  margin: 0 0 0.5em 0;
+  color: #666;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.related-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.related-content li {
+  margin: 0.3em 0;
+}
+
+.related-content a {
+  color: #1a0dab;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.related-content a:hover {
+  text-decoration: underline;
+}
+
+/* Highlight styles */
+mark {
+  background-color: #ffc400;
+  color: #222;
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+
+.highlight-section {
+  animation: highlight-fade 2s ease-out;
+}
+
+@keyframes highlight-fade {
+  0% {
+    background-color: #ffc400;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Improve search results container */
+.search-results {
+  max-height: 70vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ffc400 #f0f0f0;
+  padding: 1em;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.search-results::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background-color: #ffc400;
+  border-radius: 4px;
 }
