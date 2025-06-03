@@ -135,7 +135,7 @@
                 <li><strong>Driving Side:</strong> Right.</li>
             </ul>
         </details>
-        <details data-country="oman" id="oman-details" >
+        <details data-country="oman" id="oman-details">
             <summary>
                 <div class="country-name">
                     <img src="flags/middle-east/om.png" alt="Omani flag" class="country-flag">
@@ -159,6 +159,61 @@
                 <li><strong>Driving Side:</strong> Right.</li>
             </ul>
         </details>
+        <details data-country="israel" id="israel-details">
+            <summary>
+                <div class="country-name">
+                    <img src="flags/middle-east/il.png" alt="Israeli flag" class="country-flag">
+                    Israel
+                </div>
+            </summary>
+            <ul>
+                <li><strong>Landscape:</strong>
+                    Israel has an incredibly diverse landscape despite its small size. The **north** is mountainous and
+                    green (Galilee, Golan Heights), with forests and lush areas. The **coastal plain** from Haifa to Tel
+                    Aviv and Ashkelon is urbanized and Mediterranean. The **central highlands** (Jerusalem, West Bank)
+                    are hilly and rocky. The **Negev Desert** dominates the **south**, especially around Beersheba and
+                    down to Eilat. The **Dead Sea** area is the lowest point on Earth, with a unique desert basin
+                    landscape.
+                </li>
+
+                <li><strong>Street View Coverage:</strong>
+                    First launched in 2012. Coverage is generally very good and includes all major cities (Jerusalem,
+                    Tel Aviv, Haifa, Beersheba, Eilat) and most smaller towns and highways. Many kibbutzim and rural
+                    areas are also covered. Coverage can be sparse in some parts of the Negev or near sensitive zones
+                    (e.g., borders with Gaza, Syria, and Lebanon).
+                </li>
+
+                <li><strong>Road Signage:</strong>
+                    <ul>
+                        <li><strong>Highways:</strong>
+                            Numbered with white digits on **red background** (e.g., <code>Route 1</code>,
+                            <code>Route 6</code> - a toll road). These are major intercity roads and freeways.
+                        </li>
+                        <li><strong>Regional roads:</strong>
+                            White digits on **blue background** (e.g., <code>Route 443</code>, <code>Route 90</code>),
+                            often two-lane roads connecting towns or running through rural areas.
+                        </li>
+                        <li><strong>Local roads:</strong>
+                            White digits on **green background**, generally for intra-city or kibbutz-level roads.
+                        </li>
+                        <li><strong>Street names:</strong>
+                            Almost always appear in **three languages**: Hebrew, Arabic, and English (Latin script). For
+                            example: "רחוב הרצל / شارع هرتسل / Herzl St".
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>Driving side:</strong> Right.</li>
+                <li><strong>Unique features:</strong>
+                    <ul>
+                        <li>Road signs can contain **biblical or historical references** (e.g., “Via Dolorosa”, “Mount
+                            Zion”).</li>
+                        <li>Toll road **Route 6** is common in Google rounds and looks very modern and clean.</li>
+                        <li>Military zones or settlements may be blurred or restricted in Google imagery.</li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
     </main>
 
     <footer>
@@ -173,99 +228,99 @@
             const hash = window.location.hash;
             const urlParams = new URLSearchParams(window.location.search);
             const query = urlParams.get('q'); // Get the query from the URL parameter
-    
+
             if (hash) {
-              const element = document.querySelector(hash);
-              if (element) {
-                // Open details element if it's the target
-                if (element.tagName.toLowerCase() === 'details') {
-                  element.open = true;
+                const element = document.querySelector(hash);
+                if (element) {
+                    // Open details element if it's the target
+                    if (element.tagName.toLowerCase() === 'details') {
+                        element.open = true;
+                    }
+
+                    // Scroll to the element smoothly
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Highlight the matched text within the element if query is present
+                    if (query) {
+                        highlightTextInElement(element, query);
+                    }
+
+                    // Add a class for temporary section highlighting (optional, can be styled)
+                    // element.classList.add('highlight-section');
+                    // setTimeout(() => {
+                    //   element.classList.remove('highlight-section');
+                    // }, 3000); // Highlight for 3 seconds
                 }
-    
-                // Scroll to the element smoothly
-                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    
-                // Highlight the matched text within the element if query is present
-                if (query) {
-                     highlightTextInElement(element, query);
-                }
-    
-                // Add a class for temporary section highlighting (optional, can be styled)
-                // element.classList.add('highlight-section');
-                // setTimeout(() => {
-                //   element.classList.remove('highlight-section');
-                // }, 3000); // Highlight for 3 seconds
-              }
             }
-             // If there's a query but no hash, just highlight all occurrences on the page
-             else if (query) {
-                 highlightTextInElement(document.body, query);
-             }
-          }
-    
+            // If there's a query but no hash, just highlight all occurrences on the page
+            else if (query) {
+                highlightTextInElement(document.body, query);
+            }
+        }
+
         // Function to highlight text within a given element
         function highlightTextInElement(element, query) {
             if (!element || !query) return;
-    
+
             const lowerCaseQuery = query.toLowerCase();
             const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
-    
+
             const textNodes = [];
             let node;
             while ((node = walker.nextNode())) {
                 textNodes.push(node);
             }
-    
+
             textNodes.forEach(textNode => {
                 const parent = textNode.parentNode;
                 // Avoid highlighting within script, style, or already marked elements
                 if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.tagName === 'MARK') {
                     return;
                 }
-    
+
                 const text = textNode.nodeValue;
                 if (!text) return;
-    
+
                 const lowerCaseText = text.toLowerCase();
                 let lastIndex = 0;
                 const fragment = document.createDocumentFragment();
-    
+
                 let match;
                 // Use a regular expression to find all occurrences, ensuring word boundaries or handling punctuation
                 // This simple regex looks for the query string, adjust if needed for word boundaries
                 const regex = new RegExp(lowerCaseQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'); // Case-insensitive global regex
-    
+
                 while ((match = regex.exec(lowerCaseText)) !== null) {
                     // Append text before the match
                     fragment.appendChild(document.createTextNode(text.substring(lastIndex, match.index)));
-    
+
                     // Create and append the highlight element
                     const mark = document.createElement('mark');
                     mark.textContent = text.substring(match.index, regex.lastIndex);
                     fragment.appendChild(mark);
-    
+
                     lastIndex = regex.lastIndex;
                 }
-    
+
                 // Append remaining text after the last match
                 fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
-    
+
                 // Replace the original text node with the new fragment
                 if (fragment.childNodes.length > 0) {
                     parent.replaceChild(fragment, textNode);
                 }
             });
         }
-    
+
         // Run this code when the page is fully loaded
         document.addEventListener('DOMContentLoaded', () => {
             handlePageLoadAndHashNavigation(); // Call the function to handle hash and highlighting on load
         });
-    
+
         // Listen for hash changes within the same page
         window.addEventListener('hashchange', handlePageLoadAndHashNavigation);
-    
-        </script>
+
+    </script>
 </body>
 
 </html>
